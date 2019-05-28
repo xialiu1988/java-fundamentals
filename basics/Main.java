@@ -53,19 +53,18 @@ public class Main{
 
 
     public static void clock() {
-        try {
+        LocalDateTime now = LocalDateTime.now();
+        int second = now.getSecond();
             while (true) {
-                LocalDateTime now = LocalDateTime.now();
-                int hour = now.getHour();
-                int minute = now.getMinute();
-                int second = now.getSecond();
-
-                System.out.println(hour + ":" + minute + ":" + second);
-                TimeUnit.SECONDS.sleep(1);
+                LocalDateTime newnow = LocalDateTime.now();
+                int hour = newnow.getHour();
+                int minute = newnow.getMinute();
+                int secondNew = newnow.getSecond();
+                if(secondNew!=second) {
+                    System.out.println(hour + ":" + minute + ":" + second);
+                    second = secondNew;
+                }
 
             }
-        }catch (InterruptedException e){
-            System.out.println("interrupted.");
-        }
     }
 }
