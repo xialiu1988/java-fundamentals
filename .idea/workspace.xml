@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bfe6c33-bc1f-40a9-8687-776532076bc4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basics/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/basics/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/basics/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="50" lean-forward="true" selection-end-line="52" selection-end-column="1" />
+            <state relative-caret-position="518">
+              <caret line="67" column="47" selection-end-line="70" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,8 +39,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-78" />
-    <option name="y" value="103" />
+    <option name="x" value="256" />
+    <option name="y" value="181" />
     <option name="width" value="1238" />
     <option name="height" value="767" />
   </component>
@@ -99,7 +97,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-78" y="103" width="1238" height="767" extended-state="0" />
+    <frame x="256" y="181" width="1238" height="767" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.291806" />
@@ -170,8 +168,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/basics/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="50" lean-forward="true" selection-end-line="52" selection-end-column="1" />
+        <state relative-caret-position="518">
+          <caret line="67" column="47" selection-end-line="70" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
