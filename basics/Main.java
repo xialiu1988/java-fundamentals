@@ -7,9 +7,10 @@ public class Main{
 
     public static void main(String[] args){
 
-        int dogCount = 0;
-        System.out.println(pluralize("dog",dogCount));
-
+        int dogCount = 1;
+        System.out.println("I own " + dogCount + " " + pluralize("dog", dogCount) + ".");
+        int catCount = 2;
+        System.out.println("I own " + catCount + " " + pluralize("cat", catCount) + ".");
         flipNHeads(3);
         clock();
     }
@@ -17,13 +18,13 @@ public class Main{
     public static String pluralize(String word, int num){
 
         if(num==1){
-            return "I own " + num + " " + word + ".";
+            return  word;
         }
         else if(num<0){
             return "Number needs to be greater than 0";
         }
         else{
-            return "I own " + num + " " + word + "s.";
+            return  word + "s";
         }
     }
 
