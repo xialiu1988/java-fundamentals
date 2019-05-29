@@ -6,9 +6,76 @@ package basiclibrary;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class LibraryTest {
+public class  LibraryTest {
+    //Feature 1
     @Test public void testSomeLibraryMethod() {
         Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+        assertEquals("The new array should have the same number of length as the input number",3, classUnderTest.roll(3).length);
+        for(int n: classUnderTest.roll(3)){
+            assertTrue("Each number should be greater or equal to 1",n>=1);
+            assertTrue("Each number should be less or equal to 6",n<=6);
+        }
     }
+
+   //Feature 2
+    @Test
+    public void checkarrayhasDuplicates(){
+        Library classUnderTest = new Library();
+        int[] inputArr = new int[]{6,4,5,6,2,3};
+        assertTrue("It has duplicates in this array should return true",classUnderTest.containsDuplicates(inputArr));
+    }
+
+
+    @Test
+    public void checkarrayDoesNothaveDuplicates(){
+        Library classUnderTest = new Library();
+        int[] inputArr = new int[]{4,5,6,2,3};
+        assertFalse("It Does Not have duplicates in this array should return false",classUnderTest.containsDuplicates(inputArr));
+    }
+
+
+    @Test
+    public void checkarrayIfOnlyHasOneNumber(){
+        Library classUnderTest = new Library();
+        int[] inputArr = new int[]{4};
+        assertFalse("It Does Not have duplicates in this array should return false",classUnderTest.containsDuplicates(inputArr));
+    }
+    //Feature 3
+    @Test
+    public void averageValueisanInteger(){
+        Library classUnderTest = new Library();
+        int[] inputArr = new int[]{6,3,0};
+        assertEquals("This should return 3","3",classUnderTest.calAvg(inputArr));
+    }
+    @Test
+    public void averageValueisanDoubleType(){
+        Library classUnderTest = new Library();
+        int[] inputArr = new int[]{6,3,1};
+        assertEquals("This should return 3","3.33",classUnderTest.calAvg(inputArr));
+    }
+
+    @Test
+    public void averageValueisNegtiveValue(){
+        Library classUnderTest = new Library();
+        int[] inputArr = new int[]{-6,3,1};
+        assertEquals("This should return 3","-0.67",classUnderTest.calAvg(inputArr));
+    }
+
+    //Feature 4
+    @Test
+    public void returnLowestAverageArray(){
+        Library classUnderTest = new Library();
+        int[][] inputArr = new int[][]{{4},{3,3,3}};
+        int[] expected = new int[]{3,3,3};
+        assertArrayEquals("should return lowest average array {3,3,3}",expected,classUnderTest.calLowestAvg(inputArr));
+    }
+
+    @Test
+    public void EqualvalueReturnFirstArray(){
+        Library classUnderTest = new Library();
+        int[][] inputArr = new int[][]{{4,2},{3,3,3}};
+        int[] expected = new int[]{4,2};
+        assertArrayEquals("Equal average return first array {4,2}",expected,classUnderTest.calLowestAvg(inputArr));
+    }
+
 }
