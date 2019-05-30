@@ -2,13 +2,16 @@ package linter;
 
 import java.io.FileNotFoundException;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MyFileReader {
-    public void FindNoSemiColon() {
+    public List<String> FindNoSemiColon(String filepath) {
+        List<String> results = new ArrayList<>();
         int lineNumber = 0;
         try{
-            Scanner sc = new Scanner(new File("src/main/resources/gates.js"));
+            Scanner sc = new Scanner(new File(filepath));
             while(sc.hasNextLine()) {
                 lineNumber++;
                 String line = sc.nextLine();
@@ -17,16 +20,20 @@ public class MyFileReader {
                if(!line.contains("if")&&!line.contains("else")&&!line.contains("{")&&
                !line.contains("}")){
                     if(!line.contains(";")){
-                        System.out.println("Line"+lineNumber+" : "+"Missing semicolon.");
+                        results.add("Line"+lineNumber+" : "+"Missing semicolon.");
                     }
                }
            }
 
             }
+//            return results;
 
-        }catch (FileNotFoundException e){
+        }
+        catch (FileNotFoundException e){
             System.out.println(e);
         }
-
+finally {
+            return results;
+        }
     }
 }

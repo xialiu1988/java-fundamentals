@@ -3,6 +3,8 @@
  */
 package linter;
 
+import java.util.List;
+
 public class App {
     public String getGreeting() {
         return "Hello world.";
@@ -10,6 +12,10 @@ public class App {
 
     public static void main(String[] args) {
     MyFileReader meRead = new MyFileReader();
-    meRead.FindNoSemiColon();
+    String filepath = "src/main/resources/gates.js";
+    List<String> list = meRead.FindNoSemiColon(filepath);
+        for(String s : list){
+            System.out.println(s);
+        }
     }
 }
