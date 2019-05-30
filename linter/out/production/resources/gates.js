@@ -16,10 +16,10 @@ function or(a,b) {
 }
 
 function xor(a,b) {
-  if (and(a,b))
-    return 0;
-  return or(a,b);
-}
+   if (and(a,b))
+     return 0;
+   return or(a,b);
+ }
 
 function not(a) {
   if (a === 0)
