@@ -82,7 +82,7 @@ public class Library {
         //insert "High" and "Low" to the Hashmap
         res.put("High",max);
         res.put("Low",min);
-       //between High and Min,if set doesn't have certain number, add that to the hashmap ,the key will be ("Never Saw temperature"+K) cuz the key has to be unique that is why i added k after that string,but when print out i will take that k out, so you will only see "Never saw temperature"
+       //between High and Min,if set doesn't have certain number, add that to the hashmap ,the key will be ("Never Saw temperature"+K) cuz the key has to be unique that is why i added k after that string,but when print out i will take that "k" out, so you will only see "Never saw temperature"
         for(int k=0;k<(max-min);k++){
            if(!set.contains(k+min)) {
                res.put("Never saw temperature"+k,(k+min));
