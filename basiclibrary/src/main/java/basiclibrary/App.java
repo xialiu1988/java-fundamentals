@@ -16,14 +16,8 @@ public class App {
                 {65, 56, 55, 52, 55, 62, 57}
         };
      Library lOne = new Library();
-        HashMap<String,Integer> b = lOne.analyzeWeatherData(res);
-        for(String key: b.keySet()){
-            if(key.contains("Never saw temperature")){
-                System.out.println("Never saw temperature" +":"+ b.get(key));
-            }
-            else System.out.println(key +":"+ b.get(key));
-        }
-
+        String b = lOne.analyzeWeatherData(res);
+        System.out.println(b);
         System.out.println("======================");
         System.out.println("======================");
 
