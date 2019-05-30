@@ -11,7 +11,8 @@ Author: Xia Liu
          has methods: roll(),
                       containsDuplicates(),
                       calAvg(),
-                      calLowestAvg()
-                      
+                      calLowestAvg(),
+                      analyzeWeatherData(),
+                      tally()
    test: includes LibraryTest.java which contains at least one test for each feature.
 

@@ -92,7 +92,7 @@ public class Library {
     }
 
 
-    //Tallying Election
+    // Method#2 : Tallying Election
     public String tally(List<String > list){
      HashMap<String,Integer> hashMap = new HashMap<>();
      for(String s : list){
