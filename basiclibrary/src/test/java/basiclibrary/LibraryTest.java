@@ -4,6 +4,11 @@
 package basiclibrary;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class  LibraryTest {
@@ -77,5 +82,36 @@ public class  LibraryTest {
         int[] expected = new int[]{4,2};
         assertArrayEquals("Equal average return first array {4,2}",expected,classUnderTest.calLowestAvg(inputArr));
     }
+
+
+    //Lab03: Analyze Weather Data
+    @Test
+    public void testAnalyzeWeatherData(){
+        Library classUnderTest = new Library();
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        HashMap<String,Integer> b = classUnderTest.analyzeWeatherData(weeklyMonthTemperatures);
+        assertTrue("High should be 72",b.get("High")==72);
+        assertTrue("Low should be 51",b.get("Low")==51);
+
+        List<Integer> list = new ArrayList<Integer>();
+
+        for(String key : b.keySet()){
+            if(key.contains("Never saw temperature")){
+                list.add(b.get(key));
+            }
+        }
+
+        assertTrue("list should have 4 temperature never been seen",list.size()==4);
+        assertTrue("list should contain temperature 63",list.contains(63));
+        assertTrue("list should contain temperature 63",list.contains(67));
+        assertTrue("list should contain temperature 63",list.contains(68));
+        assertTrue("list should contain temperature 63",list.contains(69));
+    }
+
 
 }
