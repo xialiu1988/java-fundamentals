@@ -66,8 +66,12 @@ public class Library {
     public HashMap<String,Integer> analyzeWeatherData(int[][] octSeattleWeather){
         int min =999;
         int max =0;
+        //create hashmap to store the final result want to return
         HashMap<String,Integer> res = new HashMap<String,Integer>();
+        //create a hashset to store all the numbers appears in the input weather data
         HashSet<Integer> set = new HashSet<Integer>();
+        //iterate the input weather data(matrix) find the lowest temperature and highest temperture and store the unique temperature in the set
+
         for(int i=0;i<octSeattleWeather.length;i++){
             for(int j=0;j<octSeattleWeather[i].length;j++){
                 min = min<octSeattleWeather[i][j]?min:octSeattleWeather[i][j];
@@ -75,15 +79,39 @@ public class Library {
                 set.add(octSeattleWeather[i][j]);
             }
         }
+        //insert "High" and "Low" to the Hashmap
         res.put("High",max);
         res.put("Low",min);
+       //between High and Min,if set doesn't have certain number, add that to the hashmap ,the key will be ("Never Saw temperature"+K) cuz the key has to be unique that is why i added k after that string,but when print out i will take that k out, so you will only see "Never saw temperature"
         for(int k=0;k<(max-min);k++){
-
-           if(!set.contains(k+51)) {
-               res.put("Never saw temperature"+k,(k+51));
+           if(!set.contains(k+min)) {
+               res.put("Never saw temperature"+k,(k+min));
            }
         }
      return res;
+    }
+
+
+    //Tallying Election
+    public String tally(List<String > list){
+     HashMap<String,Integer> hashMap = new HashMap<>();
+     for(String s : list){
+         if(hashMap.containsKey(s)){
+             hashMap.put(s, hashMap.get(s)+1);
+         }
+        else hashMap.put(s,0);
+     }
+
+         int max = 0;
+         String name = "";
+        for(String key : hashMap.keySet()){
+            if(hashMap.get(key)>max){
+                max = hashMap.get(key);
+                name = key;
+            }
+        }
+        return name;
+
     }
 
 }

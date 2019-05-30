@@ -113,5 +113,43 @@ public class  LibraryTest {
         assertTrue("list should contain temperature 63",list.contains(69));
     }
 
+   //Lab03: tallying votes tests
+    @Test
+    public void testTallyingVotes(){
+        Library classUnderTest = new Library();
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String winner = classUnderTest.tally(votes);
+        assertEquals("Bush has most votes here","Bush",winner);
+    }
+
+    @Test
+    public void testTallyingVotesAgain(){
+        Library classUnderTest = new Library();
+        List<String> votes = new ArrayList<>();
+
+        votes.add("Shrub");
+        votes.add("Shrub");
+        votes.add("Shrub");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String winner = classUnderTest.tally(votes);
+        assertEquals("Shrub has most votes here","Shrub",winner);
+    }
 
 }
