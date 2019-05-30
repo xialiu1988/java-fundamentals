@@ -63,11 +63,11 @@ public class Library {
 
 
     //Lab03 Method#1: Analyzing Weather Data
-    public HashMap<String,Integer> analyzeWeatherData(int[][] octSeattleWeather){
+    public String analyzeWeatherData(int[][] octSeattleWeather){
         int min =999;
         int max =0;
-        //create hashmap to store the final result want to return
-        HashMap<String,Integer> res = new HashMap<String,Integer>();
+        //create a string to store the final result want to return
+        String res = "";
         //create a hashset to store all the numbers appears in the input weather data
         HashSet<Integer> set = new HashSet<Integer>();
         //iterate the input weather data(matrix) find the lowest temperature and highest temperture and store the unique temperature in the set
@@ -79,13 +79,13 @@ public class Library {
                 set.add(octSeattleWeather[i][j]);
             }
         }
-        //insert "High" and "Low" to the Hashmap
-        res.put("High",max);
-        res.put("Low",min);
+        //add "High" and "Low" to the string
+        res+="High: "+max+"\n";
+        res+="Low: "+min+"\n";
        //between High and Min,if set doesn't have certain number, add that to the hashmap ,the key will be ("Never Saw temperature"+K) cuz the key has to be unique that is why i added k after that string,but when print out i will take that "k" out, so you will only see "Never saw temperature"
         for(int k=0;k<(max-min);k++){
            if(!set.contains(k+min)) {
-               res.put("Never saw temperature"+k,(k+min));
+               res+="Never saw temperature: "+(k+min)+"\n";
            }
         }
      return res;

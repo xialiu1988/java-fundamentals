@@ -94,23 +94,20 @@ public class  LibraryTest {
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 55, 62, 57}
         };
-        HashMap<String,Integer> b = classUnderTest.analyzeWeatherData(weeklyMonthTemperatures);
-        assertTrue("High should be 72",b.get("High")==72);
-        assertTrue("Low should be 51",b.get("Low")==51);
+        String b = classUnderTest.analyzeWeatherData(weeklyMonthTemperatures);
+       String[] arr = b.split("\n");
 
-        List<Integer> list = new ArrayList<Integer>();
-
-        for(String key : b.keySet()){
-            if(key.contains("Never saw temperature")){
-                list.add(b.get(key));
-            }
+        assertEquals("Fisrt line is High: 72","High: 72",arr[0]);
+        assertEquals("Second line is Low: 51","Low: 51",arr[1]);
+       String[] expectedTemp = new String[]{
+              "Never saw temperature: 63",
+       "Never saw temperature: 67",
+        "Never saw temperature: 68",
+        "Never saw temperature: 69"
+       };
+        for(int i =2;i<arr.length;i++){
+            assertEquals("should see Never saw temperature: *numbers*",expectedTemp[i-2],arr[i]);
         }
-
-        assertTrue("list should have 4 temperature never been seen",list.size()==4);
-        assertTrue("list should contain temperature 63",list.contains(63));
-        assertTrue("list should contain temperature 63",list.contains(67));
-        assertTrue("list should contain temperature 63",list.contains(68));
-        assertTrue("list should contain temperature 63",list.contains(69));
     }
 
    //Lab03: tallying votes tests
