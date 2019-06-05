@@ -1,13 +1,14 @@
 package inheritance;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Restaurant {
+public class Restaurant implements ReviewInterface {
     private String name;
     private int stars;
     private String priceCategory;
     //get bunch of reviews for the restaurant
-    public List<Review> reviews;
+    private List<Review> reviews;
 
 //setters
     public void setName(String name) {
@@ -35,19 +36,26 @@ public class Restaurant {
         this.name = name;
         this.stars = 0;
         this.priceCategory = priceCategory;
+        this.reviews=new ArrayList<>();
     }
 
-  //toString methods
+    @Override
+    public List<Review> getReviews() {
+        return this.reviews;
+    }
+
+    //toString methods
+
     public String toString(){
         return String.format("%s Restaurant has %d stars and the price Category will be %s",this.getName(),this.getStars(),this.getPriceCategory());
     }
 
-    //addReview
-
-    public void addReview(Review review){
+    @Override
+    public void addReview(Review review) {
         reviews.add(review);
         updateStars();
     }
+
 
    //when add a review to the res
     public void updateStars(){
