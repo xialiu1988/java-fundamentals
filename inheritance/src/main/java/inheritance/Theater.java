@@ -40,7 +40,10 @@ public class Theater implements ReviewInterface{
         this.name = name;
         this.movies = movies;
         this.theaterReviews=new ArrayList<>();
-        this.movieReviews=new HashMap<>();
+        this.movieReviews= new HashMap<>();
+        for(String movie:movies){
+            this.movieReviews.put(movie,new ArrayList<>());
+        }
     }
 
     //add a movie
